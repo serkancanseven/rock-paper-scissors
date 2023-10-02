@@ -14,24 +14,12 @@ function getRandomChoice() {
 
 function playRound(playerChoice, computerChoice) {
   if (playerChoice === computerChoice) {
-    return "It's a tie!";
+    return "🪢 It's a tie!";
   }
   if (WIN_CONDITIONS[playerChoice] === computerChoice) {
     playerWins++;
-    return `You win! ${playerChoice} beats ${computerChoice}.`;
+    return `😁 You win! ${playerChoice} beats ${computerChoice}.`;
   }
   computerWins++;
-  return `You lose! ${computerChoice} beats ${playerChoice}.`;
+  return `🥺 You lose! ${computerChoice} beats ${playerChoice}.`;
 }
-
-function startGame() {
-  const playerChoice = prompt("Choose rock, paper, or scissors?").toLowerCase();
-  if (!CHOICES.includes(playerChoice)) {
-    alert("Invalid choice. You may type rock, paper, or scissors.");
-    return;
-  }
-  const computerChoice = getRandomChoice();
-  console.log(playRound(playerChoice, computerChoice));
-}
-
-startGame();
